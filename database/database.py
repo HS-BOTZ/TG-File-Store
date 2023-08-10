@@ -11,7 +11,7 @@ from sqlalchemy import Column, Integer, Boolean, String, ForeignKey, UniqueConst
 DATABASE_URL = os.environ.get("DATABASE_URL", "mongodb+srv://koyeb1:koyeb1@cluster0.ig5ttb5.mongodb.net/?retryWrites=true&w=majority")
 
 def start() -> scoped_session:
-    engine = create_engine(DATABASE_URL, client_encoding="utf8")
+    engine = create_engine(DATABASE_URL, client_encoding="koyeb1")
     BASE.metadata.bind = engine
     BASE.metadata.create_all(engine)
     return scoped_session(sessionmaker(bind=engine, autoflush=False))
